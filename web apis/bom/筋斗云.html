@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            position: relative;
+            margin: 0 auto;
+            width: 800px;
+            height: 50px;
+
+        }
+
+        ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 800px;
+            height: 50px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 50px;
+            background: rgba(121, 174, 244, 0.5);
+            z-index: 999;
+
+        }
+
+        li {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            padding: 0 10px;
+            line-height: 50px;
+            float: left;
+            list-style: none;
+            background-color: rgb(250, 129, 129);
+
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            //1获取元素（注册）
+            var cloud = document.querySelector('.cloud');
+            var ul = document.querySelector('ul');
+            var lis = ul.querySelectorAll('li');
+            var current = 0; //起始位置
+            //2绑定事件
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function () {
+                    animate(cloud, this.offsetLeft);
+                })
+                //鼠标离开 复位为0
+                lis[i].addEventListener('mouseleave', function () {
+                    animate(cloud, current);
+                })
+                //鼠标点击，当前位置作为目标值
+                lis[i].addEventListener('click', function () {
+                    current = this.offsetLeft;
+                    for (var i = 0; i < lis.length; i++) {
+                        lis[i].children[0].style.color = 'black';
+                    }
+                    this.children[0].style.color = 'green';
+                })
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div id="nav">
+        <span class="cloud"></span>
+        <ul>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">首页新闻</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

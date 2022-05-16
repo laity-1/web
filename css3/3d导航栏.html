@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 100px;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 0 10px;
+            float: left;
+            width: 120px;
+            height: 35px;
+            /* 一般给box旋转，也需要透视，干脆给li加 里面的子盒子都有透视效果 */
+            perspective: 500px;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all .4s;
+        }
+
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+
+        .front,
+        .bottom {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .front {
+            background-color: rgb(191, 201, 202);
+            z-index: 1;
+            transform: translateZ(17.5px);
+        }
+
+        .bottom {
+            background-color: rgb(255, 0, 0);
+            /* 先移动后旋转  ：我们如果有移动或者其他样式 必须先写移动*/
+            transform: translateY(17.5px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front">黑马</div>
+                <div class="bottom">欢迎您</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">黑马</div>
+                <div class="bottom">欢迎您</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">黑马</div>
+                <div class="bottom">欢迎您</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">黑马</div>
+                <div class="bottom">欢迎您</div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

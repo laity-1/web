@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            padding: 4px;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .nav>li {
+            float: left;
+            height: 50px;
+        }
+
+        .nav>li>a:hover {
+            background-color: #eee;
+        }
+
+        .nav ul {
+            display: none;
+            border-left: 1px solid rgb(217, 135, 135);
+            border-right: 1px solid rgb(232, 155, 155);
+        }
+
+        .nav ul li {
+            text-align: center;
+            line-height: 30px;
+            border-bottom: 1px solid rgb(250, 181, 181);
+        }
+
+        .nav ul li a:hover {
+            background-color: rgb(169, 248, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <div>aa</div>
+    <p>ss</p>
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var div = document.querySelector('div');
+
+        console.log(div.nextSibling);//下一个兄弟节点（所有节点）
+        console.log(div.previousSibling);//上一个兄弟节点（所有节点）
+        console.log(div.nextElementSibling);
+        console.log(div.previousElementSibling);
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;//得到四个小li
+        for (var i = 0; i < lis.length; i++) {
+            //鼠标经过
+            lis[i].onmouseover = function () {
+                this.children[1].style.display = 'block';
+            }
+            //鼠标离开
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

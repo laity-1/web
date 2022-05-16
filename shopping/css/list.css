@@ -1,0 +1,56 @@
+.sk{
+    position: absolute;
+    left:190px;
+    top:40px;
+    padding:3px 0 0 14px;
+    border-left: 1px solid rgb(158, 17, 17);
+}
+.nav {
+    overflow: hidden;
+}
+.sk_list{
+    float: left;
+}
+.sk_list ul li{
+    float: left;
+}
+.sk_list ul li a{
+    display: block;
+    line-height: 47px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+}
+.sk_con{
+    float: left;
+}
+.sk_con ul li{
+    float: left;
+}
+.sk_con ul li a{
+    display: block;
+    line-height: 49px;
+    padding: 0 20px;
+    font-size: 12px;
+}
+
+.sk_con ul li:last-child a::after{
+    content: "\e91e";
+    font-family: "icomoon";
+}
+
+.sk_bd ul li{
+    margin-right: 13px;
+    overflow: hidden;
+    float: left;
+    width: 290px;
+    height: 460px;
+    border: 1px solid transparent;
+}
+.sk_bd ul li:hover{
+    border: 1px solid rgb(255, 0, 0);
+}
+.sk_bd ul li:nth-child(4n){
+    margin-right: 0;
+}

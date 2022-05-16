@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="all">cy喜好
+    <form action="" id="sig">
+        <input type="checkbox">拉baba
+        <input type="checkbox">xuxu
+        <input type="checkbox">扣jio
+        <input type="checkbox">睡觉
+    </form>
+    <script>
+        var all = document.getElementById('all');
+        var sig = document.getElementById('sig').getElementsByTagName('input');
+        all.onclick = function () {
+            for (var i = 0; i < sig.length; i++) {
+                sig[i].checked = this.checked;
+            }
+
+        }
+        for (var i = 0; i < sig.length; i++) {
+            sig[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < sig.length; i++) {
+                    if (!sig[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                all.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

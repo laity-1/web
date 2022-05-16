@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .css {
+            width: 200px;
+            height: 300px;
+            background-color: rgb(92, 233, 255);
+        }
+
+        .change {
+            width: 400px;
+            height: 100px;
+            background-color: rgb(200, 95, 214);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="css"></div>
+    <input type="text">
+    <p>ssss</p>
+    <button>显示当前时间</button>
+    <div>22</div>
+    <div id="pp">
+        cy
+        <ul id="id">
+            <li class="li">cy</li>
+            <li class="li">cy</li>
+            <li>cy</li>
+        </ul>
+    </div>
+    <button id="cy">点我点我！</button>
+    <script>
+        var id = document.getElementById('pp');
+        console.log(id); //对象
+        console.dir(id);
+
+        var li = document.getElementsByTagName('li'); //伪数组
+        console.log(li);
+        console.log(li[0]);
+
+        var ul1 = document.getElementsByTagName('ul');
+        console.log(ul1[0].getElementsByTagName('li'));
+
+        var ul = document.getElementById('id');
+        console.log(ul.getElementsByTagName('li'));
+
+        var cla = document.getElementsByClassName('li');
+        console.log(cla);
+
+
+        //h5 querySelector 返回指定选择器的第一个元素对象
+        var first = document.querySelector('.li');
+        var lis = document.querySelectorAll('.li'); //所有
+        console.log(first);
+        console.log(lis);
+        var id1 = document.querySelector('#id');
+        console.log(id1);
+
+        //body ,html
+        var bd = document.body;
+        var ht = document.documentElement
+        console.log(bd);
+        console.log(ht);
+
+        //事件源（对象） 事件类型（如何触发 鼠标点击（onclick） 鼠标经过 键盘按下） 事件处理程序
+        var cy = document.getElementById('cy');
+        cy.onclick = function () {
+            alert('陈燕，笨蛋');
+        }
+
+        var time = document.querySelector('button');
+        var input = document.querySelector('input');
+        var nw = document.querySelector('div');
+        time.onclick = function () {
+            nw.innerText = getDate();
+            //input.innerHTML = 'sdsds'  //无效的 这个是对普通盒子 比如div 标签的内容才有效
+            input.value = '牛牛牛牛牛' //表单里面的值，文字内容是通过value来修改的
+            //如果想要某个表单被禁用，不能再点击  disabled  
+            // time.disabled = true;
+            this.disabled = true; //this 指向的是事件函数的调用者
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var day = date.getDay();  //0~6
+            return '今天是' + year + '年' + month + '月' + dates + '日' + arr[day];
+        }
+
+        //两个属性可读写，可以获取元素里面的内容。
+        var p = document.querySelector('p');//不可识别html标签 非标准，去除空格和换行。
+        p.innerText = getDate();
+        //p.innerHTML可以识别标签元素 比如<strong> </strong> 保留html标签 空格和换行。
+
+        var css1 = document.querySelector('.css');
+        css1.onclick = function () {
+            //里面的属性，驼峰命名法 fontSize backgroundColor ,js生成行内css样式，权重高
+            // this.style.backgroundColor = 'red';
+            // this.style.width = '500px'
+            this.className = 'change';  //当前的类名改为了change这个类，适合于样式较多或者功能复杂的情况。覆盖原类名
+
+            //如果想要保留原先的类，多类选择器
+            // this.className = 'css change';
+
+            //表单内容长度，input.value.length
+        }
+
+    </script>
+</body>
+
+</html>

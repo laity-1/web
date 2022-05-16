@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(236, 171, 230);
+            margin: 100px;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            background-color: rgb(245, 74, 74);
+            margin-left: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var son = document.querySelector('.son');
+        var father = document.querySelector('.father');
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+
+        //以带有定位的父亲为准，如果没有父亲或者父亲没有定位，则以body 为准
+        console.log(son.offsetLeft); //不跟单位的距离！！
+        console.log(son.offsetWidth);//包含padding + border +width  不包含margin  动态获取盒子大小
+        console.log(son.offsetHeight);
+        //返回带有定位的父亲，否则返回body
+        console.log(son.offsetParent);//必须找带有定位的父亲，亲爸爸找不到 就往上面找，否则就body
+        console.log(son.parentNode);//返回父亲，是最近一级的父亲，亲爸爸 不管定不定位
+    </script>
+</body>
+
+</html>

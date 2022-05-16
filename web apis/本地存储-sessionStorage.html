@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button class="set">存储</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除</button>
+    <button class="del">清空</button>
+    <script>
+        var ipt = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var del = document.querySelector('.del');
+        //window.sessionStorage 生命周期为关闭浏览器窗口，在同一个窗口（页面）下数据可以共享，以键值对形式存储使用
+        set.addEventListener('click', function () {
+            //表单值存储起来
+            var val = ipt.value;
+            sessionStorage.setItem('uname', val);
+            sessionStorage.setItem('pwd', val);
+        })
+        get.addEventListener('click', function () {
+            console.log(sessionStorage.getItem('uname')); //获取值
+        })
+        remove.addEventListener('click', function () {
+            sessionStorage.removeItem('uname'); //移除删除
+        })
+        del.addEventListener('click', function () {
+            sessionStorage.clear(); //清除所有
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*  for (var i = 1; i <= 9; i++) {
+             str = "";
+             for (var j = 1; j <= i; j++) {
+                 str += j + '×' + i + '=' + i * j + '\t';
+             }
+             console.log(str);
+         } */
+
+        /*   var s = prompt('减鸡吗');
+          while (s !== '减') {
+              s = prompt("减鸡吗");
+          }
+          alert('谢谢哈哈哈哈哈');
+   */
+
+        /* var money = 100;
+        while (true) {
+            var op = prompt("请输入你要的操作：\n 1.存钱 \n 2.取钱\n 3.显示余额\n 4.退出");
+            if (op == "4") {
+                alert('正在退出');
+                break;
+            }
+            switch (op) {
+                case '1':
+                    var m = parseFloat(prompt("请输入存钱数"));
+                    money += m;
+                    alert('余额' + money);
+                    break;
+                case '2':
+                    var m = parseFloat(prompt("请输入存钱数"));
+                    money -= m;
+                    alert('余额' + money);
+                    break;
+                case '3':
+                    alert('余额' + money);
+                    break;
+            }
+        } */
+
+        /*  // 构造函数
+         function Hero(name, type, blood) {
+             this.name = name;
+             this.type = type;
+             this.blood = blood;
+             this.attack = function (attack) {
+                 console.log(attack);
+             }
+         }
+         var lp = new Hero('lp', '力量型', 500);
+         console.log(lp.name);
+         console.log(lp.type);
+         console.log(lp.blood);
+         lp.attack('远程');
+         var hy = new Hero('hy', '射手', 100);
+         for (var k in hy) {
+             console.log(k); //属性名
+             console.log(hy[k]);//属性值
+         } */
+
+        // var myMath = {
+        //     PI: 3.141592653,
+        //     max: function () {
+        //         var max = arguments[0];
+        //         for (var i = 1; i < arguments.length; i++) {
+        //             if (arguments[i] > max) {
+        //                 max = arguments[i];
+        //             }
+        //         }
+        //         return max;
+        //     },
+        //     min: function () {
+        //         var min = arguments[0];
+        //         for (var i = 1; i < arguments.length; i++) {
+        //             if (arguments[i] < min) {
+        //                 min = arguments[i];
+        //             }
+        //         }
+        //         return min;
+        //     }
+        // }
+        // console.log(myMath.PI);
+        // console.log(myMath.max(1, 5, 9));
+        // console.log(myMath.min(1, 5, 9));
+        // console.log(Math.abs('-1'));//隐式转换
+        // console.log(Math.abs('pink ')); //NaN
+        // console.log(Math.floor(5.6));
+        // console.log(Math.ceil(5.6));
+        // console.log(Math.floor(-5.6));
+        // console.log(Math.ceil(-5.6));
+
+        // console.log(Math.round(-5.4));
+        // console.log(Math.round(5.4));
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 10);
+        while (true) {
+            var num = parseInt(prompt('请输入1到10的数字'));
+            if (num > random) {
+                alert('猜大了');
+            }
+            else if (num < random) {
+                alert('猜小了');
+            }
+            else {
+                alert("猜对了");
+                break;
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

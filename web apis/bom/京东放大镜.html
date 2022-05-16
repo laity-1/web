@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./big.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 20px auto auto 200px;
+            border: 1px solid #000;
+        }
+
+        .div .mask {
+            z-index: 1;
+            display: none;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(242, 242, 164);
+            border: 1px solid #ccc;
+            opacity: .5;
+            cursor: move;
+
+        }
+
+        .div .img {
+            vertical-align: middle;
+        }
+
+        .pic {
+            position: absolute;
+            left: 0;
+            top: 0;
+            vertical-align: middle;
+        }
+
+        .big {
+            display: none;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 540px;
+            top: 0;
+            background-color: rgb(255, 255, 255);
+            z-index: 999;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div class="mask"></div>
+        <img class="img" src="../dom/cy/1.png" alt="">
+        <div class="big"><img class="pic" src="../dom/cy/2.png" alt=""></div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(cy/2.jpg) no-repeat center top;
+        }
+
+        div {
+            box-sizing: border-box;
+            width: 540px;
+            padding: 10px;
+            background-color: rgb(211, 221, 255);
+            margin: 100px auto;
+        }
+
+        img {
+            vertical-align: middle;
+            margin: 0px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="cy/1.jpg" alt="">
+        <img src="cy/2.jpg" alt="">
+        <img src="cy/3.jpg" alt="">
+        <img src="cy/4.jpg" alt="">
+        <img src="cy/5.jpg" alt="">
+    </div>
+    <script>
+        var cy = document.getElementsByTagName('img');
+        for (var i = 0; i < cy.length; i++) {
+            cy[i].onclick = function () {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>

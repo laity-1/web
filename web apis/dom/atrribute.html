@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        ul {
+            position: absolute;
+            left: 50%;
+            top: 0px;
+            transform: translate(-50%);
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            padding-left: 5px;
+            margin-left: 2px;
+            background-color: rgb(252, 216, 216);
+        }
+
+        .current {
+            background-color: rgb(237, 62, 62);
+        }
+
+        .da {
+            width: 1000px;
+            background-color: rgb(198, 255, 198);
+            margin: 0 auto;
+        }
+
+        .s {
+            position: relative;
+            width: 100%;
+            line-height: 30px;
+            height: 30px;
+            background-color: rgb(176, 238, 238);
+        }
+
+        div.item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- //div.id --内置属性（自带的） div.getAttribute('属性') --自定义属性 获得值 -->
+    <!-- //div.className="值" div.setAttribute('class','值') 设置值 -->
+    <!-- //div.removeAttribute('属性') 移除值 -->
+    <div class="da">
+        <div class="s">
+            <ul>
+                <li class="current" data-index="0" id="li" data-list-name="sad">这是栏目1</li>
+                <li>这是栏目2</li>
+                <li>这是栏目3</li>
+                <li>这是栏目4</li>
+                <li>这是栏目5</li>
+            </ul>
+        </div>
+        <div class="xia">
+            <div class="item" style="display:block">项目1</div>
+            <div class="item">项目2</div>
+            <div class="item">项目3</div>
+            <div class="item">项目4</div>
+            <div class="item">项目5</div>
+        </div>
+    </div>
+    <script>
+        // h5新增获取自定义属性的方法，只能获取data-开头的
+        // dataset是一个集合里面存放了所有以data开头的自定义属性
+        var li = document.getElementById('li');
+        console.log(li.dataset.index);
+        // 如果自定义属性里面有多个—连接的单词，我们获取时采用 驼峰命名法
+        console.log(li.dataset.listName);
+        console.log(li.dataset['index']);
+        console.log(li.dataset['listName']);
+        var tab = document.querySelector('.s');
+        var lis = tab.querySelectorAll('li');
+        var item = document.querySelectorAll('.item');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current'
+                var index = this.getAttribute('index');
+                for (var i = 0; i < lis.length; i++) {
+                    item[i].style.display = 'none';
+                }
+                item[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

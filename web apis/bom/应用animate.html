@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+    <style>
+        .slider-bar {
+            /* 相当于原先位置进行挪 所以不能用relative */
+            position: absolute;
+            /* left: 50%;
+            margin-left: 724px; */
+
+            right: 5px;
+            top: 50px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: rgb(185, 236, 154);
+
+        }
+
+        .con {
+            width: 200px;
+            height: 40px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 40px;
+            z-index: -1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span>
+            <-- </span>
+                <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var slider = document.querySelector('.slider-bar');
+        var con = document.querySelector('.con');
+        slider.addEventListener('mouseenter', function () {
+            // amimate(Object,target,callback)
+            animate(con, -160, function () {
+                //当动画执行完毕，左箭头变成右箭头
+                slider.children[0].innerHTML = '-->';
+            });
+
+        })
+        slider.addEventListener('mouseleave', function () {
+            // amimate(Object,target,callback)
+            animate(con, 0, function () {
+                slider.children[0].innerHTML = '<--';
+            });
+        })
+    </script>
+</body>
+
+</html>

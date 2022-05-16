@@ -1,0 +1,287 @@
+/* 放index页面的样式表 */
+/* banner */
+.banner{
+    height: 500px;
+    background-color: rgb(204, 204, 204);
+}
+.banner .wrapper{
+    position: relative;
+    height: 500px;
+    background-color: pink;
+}
+
+/* 侧导航 */
+.banner .aside{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0,0,0,.8);
+}
+
+.banner .aside li{
+    height: 50px;
+    line-height: 50px;
+}
+.banner .aside a{
+    position: relative;
+    display: block;
+    padding-left: 36px;
+    padding-right: 19px;
+    height: 50px;
+
+    color: white;
+}
+
+.banner .aside a span{
+    margin-left: 15px;
+    font-size: 14px;
+
+
+}
+.banner .aside a:hover{
+    background-color: rgb(76, 250, 163);
+}
+
+/* a的里面最后的位置添加箭头 */
+/* 伪元素是行内显示模式 */
+.banner .aside a::after{
+    content:"";
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    width: 6px;
+    height: 11px;
+    background-image: url(../images/sprites.png);
+    background-position: -80px -110px;
+}
+
+/* 箭头 */
+.prev,
+.next{
+    position: absolute;
+    top:228px;
+    width: 45px;
+    height: 45px;
+    background-color:rgba(0,0,0,.2);
+    background-image: url(../images/sprites.png);
+    border-radius: 50%;
+}
+
+/* 背景图位置负责2个事情：改变箭头在盒子里面的位置，改变精灵图的位置 */
+/* 导致在精灵图中测量的尺寸不准确 */
+/* 解决方案2种：
+   1.书写背景图位置属性，借助谷歌的调试工具调试具体的位置数值
+   2.书写标签的时候，a负责盒子，里面在添加一个span负责箭头
+*/
+.prev{
+    left:260px;
+    background-position: 14px -60px;
+}
+.next{
+    right: 10px;
+    background-position:  -23px  -60px;
+}
+
+.banner ol{
+    position: absolute;
+    left:680px;
+    bottom: 30px;
+    height: 10px;
+
+}
+.banner ol li{
+    float: left;
+    margin-right: 24px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255,255,.4);
+    border-radius: 50%;
+    cursor:pointer;
+}
+.banner ol .current{
+    background-color: rgb(255, 255, 255);
+}
+
+/* 新鲜好物 */
+.goods .hd{
+    height: 114px;
+    line-height: 114px;
+}
+.goods .hd h2{
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+    height: 114px;
+}
+.goods .hd h2 span{
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+
+.goods .hd a,
+.shengxian .hd .more{
+    float: right;
+    color: #999;
+}
+.goods .hd a::after,
+.shengxian .hd .more::after{
+    display: inline-block;
+    margin-left: 13px;
+    content: "";
+    width: 7px;
+    height: 13px;
+    background-image: url(../images/sprites.png);
+    background-position: 0 -110px;
+    vertical-align: middle;
+}
+
+.goods .bd li{
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    width: 304px;
+    height: 405px;
+    background-color:#f0f9f4;
+    text-align: center;
+
+}
+.goods .bd li:last-child{
+    margin:0;
+}
+.goods .bd li img{
+    width: 304px;
+}
+
+.goods .bd li h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.goods .bd li div{
+    font-size: 17px;
+    color: #9a2e1f;
+}
+.goods .bd li span{
+    font-size: 23px;
+}
+
+.goods .bd li b{
+    position: absolute;
+    left: 17px;
+    top: 18px;
+    width: 28px;
+    height: 51px;
+    border: 1px solid rgb(60, 255, 148);
+    border-radius: 5px;
+    
+    font-size: 18px;
+    color: rgb(60, 255, 148);
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* 生鲜 */
+.shengxian .hd{
+    height: 96px;
+    line-height: 96px;
+}
+
+.shengxian .hd h2{
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+}
+.shengxian .hd li{
+    float: right;
+   
+}
+.shengxian .hd ul{
+    float: right;
+    margin-right: 65px;
+}
+
+.shengxian .hd li a{
+    margin-right: 6px;
+    padding: 2px 7px;
+}
+
+.shengxian .hd  li a:hover{
+    background-color: rgb(4, 197, 133);
+    color: white;
+}
+.shengxian .bd .left{
+    float: left;
+    width: 240px;
+    height: 610px;
+}
+
+.shengxian .bd .right{
+    float: left;
+    width: 1000px;
+    height: 610px;
+}
+
+.shengxian .bd .right li{
+    position: relative;
+    float: left;
+    width: 235px;
+    height: 304px;
+    margin: 0 8px;
+}
+.shengxian .bd .right li:nth-child(4n){
+    margin-right: 0;
+}
+
+.shengxian .bd .right img{
+    width: 184px;
+    height: 174px;
+    margin: 18px 29px 0;
+    
+}
+.shengxian .bd .right h4{
+    margin-left: 29px;
+    
+}
+.shengxian .bd .right span{
+    margin-left: 29px;
+    margin-top: 0;
+}
+
+.shengxian .bd .right li:hover{
+    border: 2px solid rgb(87, 255, 151);
+}
+.shengxian .bd .right li:hover div{
+    display: block;
+}
+
+.shengxian .bd .right div{
+    padding-top: 10px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 235px;
+    height: 80px;
+    background-color: rgb(67, 235, 142);
+    text-align: center;
+    display: none;
+   
+}
+.shengxian .bd .right div h5{
+    display: inline-block;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.shengxian .bd .right div a{
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+}
+
+
+

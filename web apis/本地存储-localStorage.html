@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 生命周期永久生效，除非手动删除否则关闭页面也会存在 -->
+    <!-- 可以多窗口(页面)共享(同一个浏览器可以共享) -->
+    <!-- 键值对形式存储 -->
+
+    <input type="text" name="" id="">
+    <button class="set">存储</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除</button>
+    <button class="del">清空</button>
+    <script>
+        var ipt = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var del = document.querySelector('.del');
+
+        set.addEventListener('click', function () {
+            //表单值存储起来
+            var val = ipt.value;
+            localStorage.setItem('username', val);
+            localStorage.setItem('pwd', val);
+        })
+        get.addEventListener('click', function () {
+            console.log(localStorage.getItem('uname')); //获取值
+        })
+        remove.addEventListener('click', function () {
+            localStorage.removeItem('uname'); //移除删除
+        })
+        del.addEventListener('click', function () {
+            localStorage.clear(); //清除所有
+        })
+    </script>
+</body>
+
+</html>

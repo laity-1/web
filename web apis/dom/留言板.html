@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        textarea {
+            resize: none;
+            vertical-align: middle;
+        }
+
+        li {
+            width: 500px;
+            margin-top: 10px;
+            list-style: none;
+            background-color: rgb(210, 174, 254);
+        }
+
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        <textarea name="" id="" cols="30" rows="10">123</textarea>
+        <button>发布</button>
+    </div>
+
+    <ul>
+
+    </ul>
+    <script>
+        //1获取元素
+        var but = document.querySelector('button');
+        var text = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        //2注册事件
+        but.onclick = function () {
+            if (text.value == '') {
+                alert('空！')
+                return false;
+            }
+            else {
+                //创建元素
+                var li = document.createElement('li');
+                //添加元素
+                //阻止链接跳转，需要添加javascript:void(0); 或者 javascript:;
+                li.innerHTML = text.value + "<a href='javascript:void(0);'>删除</a>";
+                // ul.appendChild(li);末尾添加
+                ul.insertBefore(li, ul.children[0])  //添加元素到什么元素前面
+
+                //删除元素，删除的是当前链接的父亲li 它的父亲
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function () {
+                        ul.removeChild(this.parentNode);  //node.removeChild(child) node是父亲，child是这个孩子
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

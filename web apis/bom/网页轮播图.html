@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <!-- 这个animate.必须写到lbt.js的上面引入 依赖这个js -->
+    <script src="animate.js"></script>
+    <script src="lbt.js"></script>
+    <style>
+        .main {
+            width: 720px;
+            height: 455px;
+            margin: 10px auto;
+
+        }
+
+        .focus {
+            position: relative;
+            width: 720px;
+            height: 455px;
+            background-color: purple;
+            overflow: hidden;
+        }
+
+        .focus ul {
+            /* 必须有定位，才能进行移动摇摆 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+        }
+
+        .focus ul li {
+            float: left;
+
+        }
+
+        .focus>a {
+            z-index: 999;
+            display: none;
+            font-size: 20px;
+            padding: 10px;
+            line-height: 40px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+        }
+
+        .focus .arrow-l {
+            left: -30px;
+            text-align: right;
+        }
+
+        .focus .arrow-r {
+            right: -30px;
+            text-align: left;
+        }
+
+        .circle {
+            height: 8px;
+
+            position: absolute;
+            bottom: 10px;
+            left: 50px;
+        }
+
+        .circle li {
+            float: left;
+            cursor: pointer;
+            width: 10px;
+            height: 10px;
+            border: 2px solid rgba(230, 226, 226, 0.5);
+            margin: 0 3px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+
+        .current {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="focus">
+            <a href="javascript:;" class="arrow-l">></a>
+            <a href="javascript:;" class="arrow-r">> </a>
+            <ul>
+                <li>
+                    <a href="#"><img src="pic/focus1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="pic/focus1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="pic/focus1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="pic/focus1.png" alt=""></a>
+                </li>
+            </ul>
+            <ol class="circle">
+
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

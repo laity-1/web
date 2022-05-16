@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200.0025px;
+            height: 200.0025px;
+            background-color: pink;
+            border: 9.9975px solid #000;
+            padding: 9.9975px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>很长很多超出盒子范围
+        很长很多超出盒子范围
+        很长很多超出盒子范围
+        很长很多超出盒子范围
+        很长很多超出盒子范围很
+        长很多超出盒子范围很长很
+        多超出盒子范围
+        很长很多超出盒子范围v很
+        长很多超出盒子范围很长很多
+        超出盒子范围v
+        很长很多超出盒子范围vv很
+        长很多超出盒子范围vv很长很
+        多超出盒子
+        范围很长很多超出盒子范围很
+        长很多超出盒子范围很长很多超
+        出盒子范围
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight); //不包括边框,包含padding
+        console.log(div.clientHeight); //不包括边框,包含padding
+        //scroll 滚动事件，滚动条发生变化会触发的事件
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop);
+        })
+    </script>
+</body>
+
+</html>
