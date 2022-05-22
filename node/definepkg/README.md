@@ -1,11 +1,11 @@
 ## 安装
 ```
-npm install packge-tool
+npm install definepkg
 ```
 
 ## 导入
 ```js
-const pkg=require("packge-tool")
+const pkg=require("definepkg")
 ```
 
 ## 格式化时间
